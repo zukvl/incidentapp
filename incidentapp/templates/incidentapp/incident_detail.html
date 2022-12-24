@@ -1,0 +1,32 @@
+{% extends 'incidentapp/base.html' %}
+{% block title %}
+   {{ incident.name }}
+{% endblock %}
+{% block page %}
+{% load static %}
+    <div class="row">
+        <div class="col-md-8 offset-md-5 content">
+            <div class="block">            
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-action list-group-item-danger">
+                            <h4 style="text-align:center;">{{incident.component}}</h4>
+                        </li>
+                        <div class="alert alert-dark" role="danger">
+                            <li class="list-group-item list-group-item-action list-group-item-primary">
+                                <h6 style="text-align:center;">{{incident.name}}</h6>
+                            </li>
+                            <li class="list-group-item list-group-item-warning">
+                                <div>{{incident.message}}</div>
+                            </li>
+                            <li class="list-group-item list-group-item-warning">
+                                <div>{{incident.status}}</div>
+                            </li>
+                            <li class="list-group-item list-group-item-warning">
+                                <div>{{incident.notifications}}</div>
+                            </li>
+                        </div>
+                    </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

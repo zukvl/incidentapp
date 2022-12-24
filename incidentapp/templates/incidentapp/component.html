@@ -1,0 +1,16 @@
+{% extends 'incidentapp/base.html' %}
+{% block page %}
+{% load static %}
+{% for component in component%}
+<div class="row">
+    <div class="col-md-8 offset-md-5 content">
+        <div class="block">
+            <div class="alert alert-success" role="alert">
+                <div class="header">{{component.name}}</div>
+                <div>{{component.description}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Incident{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %} "></script>
+    <script src="{% static 'js/myscript.js' %} "></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <ul class="nav nav-tabs">
+            <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'img/status.png' %}" width="120" height="50" class="d-inline-block align-top" alt=""></a>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Incidents</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'incidentapp-status' %}"">Status</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'incidentapp-sign-out' %}">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <nav class="nav flex-column sidebar"></br>
+        <a class="nav-link active" href="{% url 'incidentapp-add-incident' %}">Create incident</a>
+        <a class="nav-link" href="{% url 'incidentapp-add-component' %}">Add application</a>
+        <a class="nav-link" href="{% url 'incidentapp-component' %}">Application</a>
+        <a class="nav-link" href="{% url 'home' %}">Company</a>
+    </nav></br>
+    {% block page %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'incidentapp/base.html' %}
+{% block page %}
+{% load static %}
+{% for incident in incidents%}
+    <div class="row">
+        <div class="col-md-8 offset-md-5 content">
+            <div class="block">
+                <div class="alert alert-primary" role="alert">
+                    <div class="header"><a class="nav-link" href="{% url 'incident-detail' incident_id=incident.id %}">{{incident.name}}</a></div>
+                    <div>{{incident.component}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
